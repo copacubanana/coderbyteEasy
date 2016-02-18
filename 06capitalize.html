@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style></style>
+<title></title>
+<meta charset='UTF-8' />
+</head>
+<body>
+
+<p>Using the JavaScript language, have the function LetterCapitalize(str) take the str 
+parameter being passed and capitalize the first letter of each word. Words will be 
+separated by only one space.</p>
+
+<script>
+
+function Capitalize(str) {
+str = ' ' + str;
+var letter = '';
+var capStr = '';
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) === ' ') {
+          letter = str.charAt(i+1);
+          letter = letter.toUpperCase();
+          capStr = capStr.concat(' ' + letter);
+        }
+        if (str.charAt(i) !== ' ' && str.charAt(i-1) !== ' ') {
+          capStr = capStr.concat(str.charAt(i));
+        }
+
+    }
+
+return capStr;
+}
+
+document.write(Capitalize('can you spell potato?'));
+document.write('<br>');
+document.write(Capitalize('i\'m on to you'));
+document.write('<br>');
+document.write(Capitalize('fifty shades of ice cubes'));
+document.write('<br>');
+</script>
+</html>

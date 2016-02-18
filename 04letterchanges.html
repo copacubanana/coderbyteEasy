@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+<title></title>
+<meta charset='UTF-8' />
+</head>
+<body>
+<script>
+
+function abcShift(str) {
+str = str.toLowerCase();
+var abc = 'abcdefghijklmnopqrstuvwxyza';
+abc = abc.split('');
+rep = '';
+arr = [];
+
+    for (var i = 0; i < str.length; i++) {
+        
+        for (var ii = 0; ii < abc.length; ii++) {
+            
+            if (str.substr(i,1) === abc[ii]) {
+                arr.push(abc[ii + 1]);
+                break;
+            }
+            
+            if (str.substr(i,1).search(/[a-z]/) == -1) {
+                arr.push(str.substr(i,1));
+                break;
+            }
+        }
+    }   
+    
+for (var j = 0; j < arr.length; j++) {
+    if (arr[j].search(/[aeiou]/) > -1) {
+       arr[j] = arr[j].toUpperCase();
+    }
+}
+    
+return arr.join('');
+}
+
+document.write(abcShift('dOcument WRite here'));
+document.write('<br>');
+document.write(abcShift('cats in the 3bag'));
+document.write('<br>');
+document.write(abcShift('lets be friends'));
+document.write('<br>');
+
+</script>
+</body>
+</html>
