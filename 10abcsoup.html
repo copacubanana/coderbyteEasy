@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8' />
+<title></title>
+</head>
+<body>
+
+<p> Using the JavaScript language, have the function AlphabetSoup(str) take the str string
+parameter being passed and return the string with the letters in alphabetical order (ie. 
+hello becomes ehllo). Assume numbers and punctuation symbols will not be included in the 
+string.</p>
+
+<script>
+
+function AlphabetSoup(str) {
+return abc = str.split('').sort().join('');
+}
+
+document.write(AlphabetSoup("coderbyte")); //"bcdeeorty"
+document.write('<br>');
+document.write(AlphabetSoup("hooplah")); //"ahhloop" 
+document.write('<br>');
+document.write(AlphabetSoup("hello")); //"ehllo"
+document.write('<br>');
+document.write(AlphabetSoup("bca")); //"abc"
+document.write('<br>');
+</script>
+
+
+</body>
+</html>
