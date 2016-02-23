@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rectangle Area</title>
+<meta charset="UTF-8" />
+<style></style>
+</head>
+<body>
+
+<p> Using the JavaScript language, have the function RectangleArea(strArr) take the array 
+of strings stored in strArr, which will only contain 4 elements and be in the form (x y) 
+where x and y are both integers, and return the area of the rectangle formed by the 4 
+points on a Cartesian grid. The 4 elements will be in arbitrary order. For example: if 
+strArr is ["(0 0)", "(3 0)", "(0 2)", "(3 2)"] then your program should return 6 because 
+the width of the rectangle is 3 and the height is 2 and the area of a rectangle is equal 
+to the width * height. </p>
+
+<script>
+
+//loop through points
+//remove parentheses
+//separate x and y into arrays
+//order least to greatest 
+//subtract highest and lowest for each length and width
+//multiply length and width
+
+function RectangleArea(strArr) {
+lenArr =  [];
+widArr = [];
+length = 0;
+width = 0;
+space = 0;
+tempArr = [];
+
+for (var i = 0; i < strArr.length; i++) {
+    
+    strArr[i] = strArr[i].replace('(','');
+    strArr[i] = strArr[i].replace(')','');
+
+    tempArr = strArr[i].split(' ');
+    widArr.push(tempArr[0]);
+    lenArr.push(tempArr[1]);
+}
+
+widArr.sort(function(a,b){return a-b});
+lenArr.sort(function(a,b){return a-b});
+
+width = widArr[3] - widArr[0];
+length = lenArr[3] - widArr[0];
+
+return width * length;
+}
+
+document.write(RectangleArea(["(0 0)", "(3 0)", "(0 2)", "(3 2)"])); //6
+document.write('<br>');
+document.write(RectangleArea(["(1 1)","(1 3)","(3 1)","(3 3)"])); //4
+document.write('<br>');
+document.write(RectangleArea(["(0 0)","(1 0)","(1 1)","(0 1)"])); //1
+document.write('<br>');
+document.write(RectangleArea(["(-1 -1)","(0 0)","(-1 0)","(0 -1)"])); //1
+document.write('<br>');
+document.write(RectangleArea(["(-2 -2)","(0 0)","(-2 0)","(0 -2)"])); //4
+document.write('<br>');
+
+
+/*
+Notes 2/21/2016
+look up array.reduce() 
+why can't i split an array of strings, into substrings
+*/
+
+</script>
+</body>
+</html>
