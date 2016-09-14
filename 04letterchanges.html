@@ -9,11 +9,23 @@
 <body>
 <script>
 
+/*
+
+1. var str turns all letters to lowercase
+2. var i loop goes through each letter of the string, then var ii loop goes through 
+each letter of variable abc and matches the letter
+3. the next letter of the matched variable is found and is pushed into array arr
+4. the second if statement checks if there is not a letter, then returns that non-letter as is
+5. the final for loop var j finds every vowel and changes it to uppercase
+6. the array arr is joined together into a string
+
+*/
+
+
 function abcShift(str) {
 str = str.toLowerCase();
 var abc = 'abcdefghijklmnopqrstuvwxyza';
 abc = abc.split('');
-rep = '';
 arr = [];
 
     for (var i = 0; i < str.length; i++) {

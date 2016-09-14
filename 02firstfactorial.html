@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<pre>
+Using the JavaScript language, have the function FirstFactorial(num) take the num parameter 
+being passed and return the factorial of it (ie. if num = 4, return (4 * 3 * 2 * 1)). For 
+the test cases, the range will be between 1 and 18. 
+</pre>
+
+<p id="demo">Factorial goes here</p>
+
+<script>
+
+/*
+
+1. variable i hold parameter num minus 1 as long as i is greater than 0
+2. parameter num is multiplied by variable i each time the loop runs
+
+*/
+
+function firstFactorial(num) {
+    for (var i = (num - 1); i > 0; i--) {
+	    num *= i;	
+    }
+    return num;
+}
+document.getElementById("demo").innerHTML = firstFactorial(4);
+
+</script>
+
+</body>
+</html>

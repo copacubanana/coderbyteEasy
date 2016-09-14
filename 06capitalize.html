@@ -13,6 +13,24 @@ separated by only one space.</p>
 
 <script>
 
+/*
+
+
+1. var str first adds an extra space to the initial parameter str so the first word will 
+be capitalized during the loop
+2. for loop var i goes through each character of variable str
+3. the first if statement looks for a space character
+4. variable letter is the character found after the space character
+5. variable letter is then capitalized
+6. variable capStr begins as an empty string then adds a space plus variable letter only if
+	variable capStr has a length greater than 0, so that an extra isn't added at the 
+	beginning of the final string
+7. the last if statement checks if the current character is not a space and if the the character
+	before it is also not a space, it will add the single character, which insures duplicate
+	characters do not appear
+
+*/
+
 function Capitalize(str) {
 str = ' ' + str;
 var letter = '';
@@ -21,7 +39,11 @@ var capStr = '';
         if (str.charAt(i) === ' ') {
           letter = str.charAt(i+1);
           letter = letter.toUpperCase();
-          capStr = capStr.concat(' ' + letter);
+          	if (capStr.length > 0) {
+          		capStr = capStr.concat(' ' + letter);
+          	} else {
+          		capStr = capStr.concat(letter);
+          	}
         }
         if (str.charAt(i) !== ' ' && str.charAt(i-1) !== ' ') {
           capStr = capStr.concat(str.charAt(i));

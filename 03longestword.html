@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> Using the PHP language, have the function LongestWord(sen) take the sen parameter being
+passed and return the largest word in the string. If there are two or more words that are
+the same length, return the first word from the string with that length. Ignore punctuation
+and assume sen will not be empty.</p>
+
+<p id="demo">Here is a paragraph</p>
+<p id="longword">Goes here:</p>
+
+<script>
+
+/*
+1. Sentence is split into separate words
+2. variable longest holds the current highest number of letters, with 0 as the initial number
+3. loop checks the number of letters in each word against variable longest
+4. variable word holds the corresponding word that has the same number of letters as variable longest
+
+*/
+
+function longestWord(sen) {
+   var str = sen.split(" ");
+   var longest = 0;
+   var word;
+   for (var i = 0; i < str.length; i++) {
+       if (longest < str[i].length) { 
+           longest = str[i].length; 
+           word = str[i];
+       }
+    }
+    return word;
+}
+document.getElementById("longword").innerHTML = longestWord("Here is a paragraph");
+
+</script>
+</body>
+</html>
