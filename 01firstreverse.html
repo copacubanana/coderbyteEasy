@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>FirstReverse</title>
+</head>
+<body>
+<pre>
+technical interview questions by Interview Cake
+Using the JavaScript language, have the function FirstReverse(str) take the str parameter 
+being passed and return the string in reversed order. 
+</pre>
+
+<script>
+
+function FirstReverse(str) { 
+  str = str.split('');
+  str = str.reverse();
+  str = str.join('');
+  return str; 
+         
+}
+
+document.write( FirstReverse("coderbyte") ); // "etybredoc" 
+document.write('<br>');
+document.write( FirstReverse("I Love Code") ); // "edoC evoL I" 
+document.write('<br>');
+
+</script>
+
+
+</body>
+</html>
