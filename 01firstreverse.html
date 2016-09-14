@@ -12,13 +12,17 @@ being passed and return the string in reversed order.
 </pre>
 
 <script>
+/*
+1. Split string into separate characters and into an array
+2. Reverse Array
+3. Join the items of the array into a one string
+*/
 
 function FirstReverse(str) { 
   str = str.split('');
   str = str.reverse();
   str = str.join('');
-  return str; 
-         
+  return str;     
 }
 
 document.write( FirstReverse("coderbyte") ); // "etybredoc" 
